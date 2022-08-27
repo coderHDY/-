@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="/assets/icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileImage" content="/assets/icon.png">
+    <link rel="mask-icon" href="/assets/icon.png" color="#f4c042">
+    <meta name="theme-color" content="#f4c042">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#f4c042">
+    <meta name="msapplication-TileColor" content="#f4c042">
+    <link rel="stylesheet" href="./assets/index.css">
+    <title>影视工厂</title>
+</head>
+
+<body>
+    <div class="loading-body">
+        <div class="container" id="container">
+            <div class="sun">
+                <div class="sun-body">
+                    <div class="line" style="--i: 1"></div>
+                    <div class="line" style="--i: 2"></div>
+                    <div class="line" style="--i: 3"></div>
+                    <div class="line" style="--i: 4"></div>
+                    <div class="line" style="--i: 5"></div>
+                    <div class="line" style="--i: 6"></div>
+                    <div class="line" style="--i: 7"></div>
+                    <div class="line" style="--i: 8"></div>
+                </div>
+                <div class="eye"></div>
+            </div>
+            <div class="horizon"></div>
+        </div>
+    </div>
+
+    <iframe src="https://www.ysgc.cc/" id="iframe" frameborder="0"></iframe>
+
+    <style>
+
+    </style>
+    <script>
+        const loading = document.querySelector(".loading-body");
+        iframe.addEventListener("load", () => {
+            const head = document.getElementsByTagName('head')[0];
+            head.innerHTML = `
+                <meta name="msapplication-TileColor" content="#ffffff">
+                <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+                <meta name="theme-color" content="#ffffff">
+                <link rel="mask-icon" href="/assets/icon.png" color="#ffffff">
+            ` + head.innerHTML;
+            loading.classList.add("hide");
+            iframe.classList.add("show");
+        })
+    </script>
+</body>
+
+</html>
